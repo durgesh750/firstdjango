@@ -25,7 +25,7 @@ urlpatterns = [
     #path('',home_view),
     path('',booksearch),
     path('deletebook/<id>',deletebook),
-    path('editbook/<id>',deletebook),
+   # path('editbook/<id>',deletebook),
 
 
 ]

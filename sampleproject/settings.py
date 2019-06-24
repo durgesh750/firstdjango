@@ -25,7 +25,7 @@ SECRET_KEY = '1)l#010r&k9q+jxonhk2_i@eaeg)j2uz$f%_fv@dy#p=*43gvy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rocky-journey-99614.herokuapp.com']
 
 
 # Application definition
@@ -83,6 +83,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
 #DATABASES = {
 #   'default': {
